@@ -4,20 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
 @Entity
+@ToString
 public class Tpp_ref_product_register_type {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long internal_id;
-    String value;
-    String register_type_name;
-    String product_class_code;
-    LocalDateTime register_type_start_date;
-    LocalDateTime register_type_end_date;
-    String account_type;
+    public Long internal_id;
+    public String value;
+    public String register_type_name;
+    public String product_class_code;
+    public LocalDateTime register_type_start_date;
+    public LocalDateTime register_type_end_date;
+    public String account_type;
 }
 /*
 CREATE TABLE IF NOT EXISTS tpp_ref_product_register_type

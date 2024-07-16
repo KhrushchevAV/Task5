@@ -7,14 +7,6 @@ import study.stepup.entities.Account_pool;
 
 @Repository
 public interface Account_poolRepo extends JpaRepository<Account_pool, Long> {
-
-    /*    public Long id;
-    public String branch_code;
-    public String currency_code;
-    public String mdm_code;
-    public String priority_code;
-    public String registry_type_code;
-*/
     @Query(value="SELECT ap.id, " +
             " ap.branch_code, " +
             " ap.currency_code, " +

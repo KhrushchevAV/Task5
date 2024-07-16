@@ -11,24 +11,24 @@ import java.time.LocalDateTime;
 public class Tpp_product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    Long product_code_id;
-    Long client_id;
-    String type;
-    String number;
-    Long priority;
-    LocalDateTime date_of_conclusion;
-    LocalDateTime start_date_time;
-    LocalDateTime end_date_time;
-    Long days;
-    Double penalty_rate;
-    Double nso;
-    Double threshold_amount;
-    String requisite_type;
-    String interest_rate_type;
-    Double tax_rate;
-    String reasone_close;
-    String state;
+    public Long id;
+    public Long product_code_id;
+    public Long client_id;
+    public String type;
+    public String number;
+    public Long priority;
+    public LocalDateTime date_of_conclusion;
+    public LocalDateTime start_date_time;
+    public LocalDateTime end_date_time;
+    public Long days;
+    public Float penalty_rate;
+    public Float nso;
+    public Float threshold_amount;
+    public String requisite_type;
+    public String interest_rate_type;
+    public Float tax_rate;
+    public String reasone_close;
+    public String state;
 }
 
 /*

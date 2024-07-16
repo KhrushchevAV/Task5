@@ -11,29 +11,29 @@ import java.time.LocalDateTime;
 public class Agreement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
-    Long product_id;
-    String general_agreement_id;
-    String supplementary_agreement_id;
-    String arrangement_type;
-    Long sheduler_job_id;
-    String number;
-    LocalDateTime opening_date;
-    LocalDateTime closing_date;
-    LocalDateTime cancel_date;
-    Long validity_duration;
-    String cancellation_reason;
-    String status;
-    LocalDateTime interest_calculation_date;
-    Double interest_rate;
-    Double coefficient;
-    String coefficient_action;
-    Double minimum_interest_rate;
-    Double minimum_interest_rate_coefficient;
-    String minimum_interest_rate_coefficient_action;
-    Double maximal_interest_rate;
-    Double maximal_interest_rate_coefficient;
-    String maximal_interest_rate_coefficient_action;
+    public Long id;
+    public Long product_id;
+    public String general_agreement_id;
+    public String supplementary_agreement_id;
+    public String arrangement_type;
+    public Long sheduler_job_id;
+    public String number;
+    public LocalDateTime opening_date;
+    public LocalDateTime closing_date;
+    public LocalDateTime cancel_date;
+    public Long validity_duration;
+    public String cancellation_reason;
+    public String status;
+    public LocalDateTime interest_calculation_date;
+    public Float interest_rate;
+    public Float coefficient;
+    public String coefficient_action;
+    public Float minimum_interest_rate;
+    public Float minimum_interest_rate_coefficient;
+    public String minimum_interest_rate_coefficient_action;
+    public Float maximal_interest_rate;
+    public Float maximal_interest_rate_coefficient;
+    public String maximal_interest_rate_coefficient_action;
 }
 
 /*

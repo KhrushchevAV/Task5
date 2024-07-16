@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import study.stepup.model.InstanceRequestBody;
 import study.stepup.model.ProductRegister;
+import study.stepup.services.InstanceCreateService;
 import study.stepup.services.ProductRegisterService;
 
 @RestController
@@ -15,6 +17,8 @@ public class RController {
 
     @Autowired
     ProductRegisterService prs;
+    @Autowired
+    InstanceCreateService instanceCreateService;
 
     // Продуктовый регистр
     @PostMapping("/corporate-settlement-account/create")
@@ -25,7 +29,9 @@ public class RController {
     }
 
     @PostMapping("/corporate-settlement-instance/create")
-    public String instanceCreate() {
-        return "instance created";
+    public ResponseEntity<?> instanceCreate(@RequestBody InstanceRequestBody requestBody) {
+        instanceCreateService.setRequestBody(requestBody);
+        Object answer = instanceCreateService.execute();
+        return  new ResponseEntity<>(answer, new HttpHeaders(), HttpStatus.CREATED);
     }
 }
