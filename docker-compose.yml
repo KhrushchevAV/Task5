@@ -1,0 +1,48 @@
+services:
+  java_app:
+    container_name: java_app
+    image: task5:1.0.0
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/db
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=pg11
+      - spring.datasource.url=jdbc:postgresql://java_db:5432/db
+      - spring.datasource.username=postgres
+      - spring.datasource.password=pg11
+    depends_on:
+      - java_db
+
+  java_db:
+    container_name: java_db
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: db
+      POSTGRES_PASSWORD: pg11
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  pgAdmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      - DATABASE_URL=jdbc:postgresql://java_db:5432/db
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=pg11
+      - PGADMIN_DEFAULT_EMAIL=ahrusch@mail.ru
+      - PGADMIN_DEFAULT_PASSWORD=pg11
+    ports:
+      - "8081:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgAdmin
+    depends_on:
+      - java_db
+
+volumes:
+  pgdata: {}
+  pgadmin-data :
